@@ -5,77 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drawing Generator</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        #generator {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-        .category {
-            background: white;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            width: 100%;
-            max-width: 500px; /* Adjust as needed */
-            justify-content: space-between;
-            flex-wrap: wrap; /* Allow the content to wrap */
-        }
-
-        .category span:first-child {
-            flex: 1;
-            text-align: left;
-            font-weight: bold;
-            min-width: 150px;
-        }
-
-        .category button,
-        .category .result,
-        .category .retries {
-            flex-shrink: 0;
-        }
-
-        #color-palette {
-            flex-basis: 100%; /* Makes the color palette section take up a full row */
-            margin-top: 10px;
-        }
-
-        .palette {
-            display: flex;
-            gap: 5px;
-            margin-top: 10px; /* Ensures there's space above the palette */
-        }
-
-        .palette div {
-            width: 30px;
-            height: 30px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .input-container {
-            display: flex;
-            align-items: center;
-            gap: 5px; /* Adjust spacing between elements */
-        }
-
-        .input-container label {
-            white-space: nowrap; /* Prevents the label from wrapping */
-        }
-        .hidden {
-            display: none;
-        }
-        
-    </style>
     <header>
         <h1 id="title">Drawing Generator</h1>
         <label for="language-selector">Language:</label>
@@ -145,6 +74,8 @@
         
     </div>
     <script src="categories.js"></script>
+    <script src="translations.js"></script>
+    <script src="generationsAndButtons.js"></script>
     
 </body>
 </html>
