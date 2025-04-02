@@ -1,7 +1,7 @@
 
 const translations = {
     en: {
-        title: "𝓓𝓡𝓐𝓦𝓘𝓝𝓖 𝓖𝓔𝓝𝓔𝓡𝓐𝓣𝓞𝓡",
+        title: "𝓓𝓡𝓐𝓦𝓘𝓝𝓖 𝓘𝓓𝓔𝓐 𝓖𝓔𝓝𝓔𝓡𝓐𝓣𝓞𝓡",
         background: "Background:",
         foreground1: "Foreground Element 1:",
         foreground2: "Foreground Element 2:",
@@ -15,7 +15,7 @@ const translations = {
         copyText: "Click a color to copy its Hex"
     },
     es: {
-        title: "𝓖𝓔𝓝𝓔𝓡𝓐𝓓𝓞𝓡 𝓓𝓔 𝓓𝓘𝓑𝓤𝓙𝓞𝓢",
+        title: "𝓖𝓔𝓝𝓔𝓡𝓐𝓓𝓞𝓡 𝓓𝓔 𝓘𝓓𝓔𝓐𝓢 𝓓𝓔 𝓓𝓘𝓑𝓤𝓙𝓞𝓢",
         background: "Fondo:",
         foreground1: "Elemento de Primer Plano 1:",
         foreground2: "Elemento de Primer Plano 2:",
