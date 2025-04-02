@@ -140,9 +140,15 @@ function changeLanguage(lang) {
 
     document.querySelectorAll(".category").forEach(category => {
         const type = category.dataset.type;
-        
-        // Update category labels and buttons
-        category.querySelector("span").textContent = translations[lang][type];
+
+        // Handle the "color-palette" category separately
+        if (type === "color-palette") {
+            category.querySelector("span").textContent = translations[lang].colorPalette;
+        } else {
+            // Update category labels and buttons
+            category.querySelector("span").textContent = translations[lang][type];
+        }
+
         category.querySelector(".generate").textContent = translations[lang].generate;
         category.querySelector(".retry").textContent = translations[lang].retry;
 
@@ -154,11 +160,11 @@ function changeLanguage(lang) {
         // Translate the existing result instead of generating a new one
         const result = category.querySelector(".result");
         const previousText = result.textContent.trim();
-        
+
         if (previousText !== "") {
-            let index = categories.en[type].indexOf(previousText); // Check English list
+            let index = categories.en[type]?.indexOf(previousText); // Check English list
             if (index === -1) {
-                index = categories.es[type].indexOf(previousText); // Check Spanish list
+                index = categories.es[type]?.indexOf(previousText); // Check Spanish list
             }
             if (index !== -1) {
                 result.textContent = categories[lang][type][index]; // Apply correct translation

@@ -26,20 +26,55 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            width: 100%;
+            max-width: 500px; /* Adjust as needed */
+            justify-content: space-between;
+            flex-wrap: wrap; /* Allow the content to wrap */
         }
-        .hidden {
-            display: none;
+
+        .category span:first-child {
+            flex: 1;
+            text-align: left;
+            font-weight: bold;
+            min-width: 150px;
         }
+
+        .category button,
+        .category .result,
+        .category .retries {
+            flex-shrink: 0;
+        }
+
+        #color-palette {
+            flex-basis: 100%; /* Makes the color palette section take up a full row */
+            margin-top: 10px;
+        }
+
         .palette {
             display: flex;
             gap: 5px;
+            margin-top: 10px; /* Ensures there's space above the palette */
         }
+
         .palette div {
             width: 30px;
             height: 30px;
             border-radius: 4px;
             cursor: pointer;
         }
+        .input-container {
+            display: flex;
+            align-items: center;
+            gap: 5px; /* Adjust spacing between elements */
+        }
+
+        .input-container label {
+            white-space: nowrap; /* Prevents the label from wrapping */
+        }
+        .hidden {
+            display: none;
+        }
+        
     </style>
     <header>
         <h1 id="title">Drawing Generator</h1>
@@ -75,21 +110,21 @@
             <button class="retry hidden">Retry</button>
             <span class="retries hidden">Nº of retries: 0</span>
         </div>
-        <div class="category" data-type="sky">
+        <div class="category" data-type="sky" style="background-color: rgb(163, 163, 162);">
             <span>Sky Element:</span>
             <button class="generate">Generate!</button>
             <span class="result"></span>
             <button class="retry hidden">Retry</button>
             <span class="retries hidden">Nº of retries: 0</span>
         </div>
-        <div class="category" data-type="land">
+        <div class="category" data-type="land" style="background-color: rgb(163, 163, 162);">
             <span>Land Element:</span>
             <button class="generate">Generate!</button>
             <span class="result"></span>
             <button class="retry hidden">Retry</button>
             <span class="retries hidden">Nº of retries: 0</span>
         </div>
-        <div class="category" data-type="water">
+        <div class="category" data-type="water" style="background-color: rgb(163, 163, 162);">
             <span>Water Element:</span>
             <button class="generate">Generate!</button>
             <span class="result"></span>
@@ -98,7 +133,10 @@
         </div>
         <div class="category" data-type="color-palette">
             <span>Color Palette:</span>
-            <input type="number" min="1" max="12" value="6" id="colorCount">
+            <div class="input-container">
+                <label for="colorCount">Nº colors:</label>
+                <input type="number" min="1" max="12" value="6" id="colorCount">
+            </div>
             <button class="generate">Generate!</button>
             <div class="palette"></div>
             <button class="retry hidden">Retry</button>
