@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        #generator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .category {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        .palette {
+            display: flex;
+            gap: 5px;
+        }
+        .palette div {
+            width: 30px;
+            height: 30px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+    <header>
+        <h1 id="title">Drawing Generator</h1>
+        <label for="language-selector">Language:</label>
+        <select id="language-selector">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+        </select>
+    </header>
+    
+</head>
+<body>
+    <h1></h1>
+    <div id="generator">
+        <div class="category" data-type="background">
+            <span>Background:</span>
+            <button class="generate">Generate!</button>
+            <span class="result"></span>
+            <button class="retry hidden">Retry</button>
+            <span class="retries hidden">Nº of retries: 0</span>
+        </div>
+        <div class="category" data-type="foreground1">
+            <span>Foreground Element 1:</span>
+            <button class="generate">Generate!</button>
+            <span class="result"></span>
+            <button class="retry hidden">Retry</button>
+            <span class="retries hidden">Nº of retries: 0</span>
+        </div>
+        <div class="category" data-type="foreground2">
+            <span>Foreground Element 2:</span>
+            <button class="generate">Generate!</button>
+            <span class="result"></span>
+            <button class="retry hidden">Retry</button>
+            <span class="retries hidden">Nº of retries: 0</span>
+        </div>
+        <div class="category" data-type="sky">
+            <span>Sky Element:</span>
+            <button class="generate">Generate!</button>
+            <span class="result"></span>
+            <button class="retry hidden">Retry</button>
+            <span class="retries hidden">Nº of retries: 0</span>
+        </div>
+        <div class="category" data-type="land">
+            <span>Land Element:</span>
+            <button class="generate">Generate!</button>
+            <span class="result"></span>
+            <button class="retry hidden">Retry</button>
+            <span class="retries hidden">Nº of retries: 0</span>
+        </div>
+        <div class="category" data-type="water">
+            <span>Water Element:</span>
+            <button class="generate">Generate!</button>
+            <span class="result"></span>
+            <button class="retry hidden">Retry</button>
+            <span class="retries hidden">Nº of retries: 0</span>
+        </div>
+        <div class="category" data-type="color-palette">
+            <span>Color Palette:</span>
+            <input type="number" min="1" max="12" value="6" id="colorCount">
+            <button class="generate">Generate!</button>
+            <div class="palette"></div>
+            <button class="retry hidden">Retry</button>
+            <span class="retries hidden">Nº of retries: 0</span>
+        </div>
+        
+    </div>
+    <script src="categories.js"></script>
+    
+</body>
+</html>
