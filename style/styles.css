@@ -1,8 +1,10 @@
+/* General styles remain the same */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #98ca96;
-    padding: 20px;
+    margin: 0; /* Remove default margin */
+    padding-top: 5%; /* Remove padding from the body */
 }
 
 #title {
@@ -13,13 +15,25 @@ body {
                  0 0 5px rgba(0, 0, 0, 0.1);
 }
 
+#navbar {
+    background-color: aliceblue;
+    position: fixed; /* Always stays at the top */
+    top: 0;
+    z-index: 1000;
+    width: 100%; /* Ensure the navbar spans the full width */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
 #generator {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    padding: 20px; /* Add padding to the generator instead of the body */
+    padding-top: 80px; /* Add space to account for the fixed navbar */
 }
+
 .category {
     background: white;
     padding: 10px;
@@ -64,6 +78,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
 }
+
 .input-container {
     display: flex;
     align-items: center;
@@ -73,6 +88,61 @@ body {
 .input-container label {
     white-space: nowrap; /* Prevents the label from wrapping */
 }
+
 .hidden {
     display: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #title {
+        font-size: 2em; /* Reduce title size for smaller screens */
+    }
+
+    #generator {
+        gap: 10px; /* Reduce spacing between categories */
+    }
+
+    .category {
+        max-width: 100%; /* Allow categories to take full width */
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
+
+    .category span:first-child {
+        min-width: auto; /* Remove fixed width for smaller screens */
+        margin-bottom: 5px; /* Add spacing below the label */
+    }
+
+    .input-container {
+        flex-direction: column; /* Stack label and input vertically */
+        align-items: flex-start; /* Align to the left */
+        gap: 5px;
+    }
+
+    .palette div {
+        width: 25px; /* Reduce color box size */
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    #title {
+        font-size: 1.5em; /* Further reduce title size for very small screens */
+    }
+
+    body {
+        margin-left: -10%;
+        padding: 10%; /* Reduce padding for smaller screens */
+        padding-top: 10%;
+    }
+
+    .category {
+        padding: 8px; /* Reduce padding inside categories */
+    }
+
+    .palette div {
+        width: 20px; /* Further reduce color box size */
+        height: 20px;
+    }
 }
